@@ -12,10 +12,16 @@ function getReactionText(prediction) {
 
 function reaction2prediction(prediction) {
     const fireElement = document.getElementById("txt-reaction");
-    fireElement.textContent = getReactionText(prediction);
+    const reactionText = getReactionText(prediction);
+    fireElement.textContent = reactionText;
 
     const bodybg = document.getElementsByTagName("body")[0];
     bodybg.style.backgroundColor = prediction[2].probability >= 0.50 ? "red" : "unset";
 
-    fireElement.textContent = getReactionText(prediction);
+    const gifElement = document.getElementById("gif-reaction");
+    if (reactionText === "AUXILIO FUEGO") {
+        gifElement.src = "./img/fire.gif";
+    } else {
+        gifElement.src = "./img/chill.gif";
+    }
 }

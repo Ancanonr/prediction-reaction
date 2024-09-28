@@ -1,3 +1,13 @@
 body {
-    transition: background-color 5s ease-in-out;
+    transition: background-color 2s ease-in-out;
+    min-height: 100%;
+    min-height: 100vh;
+    border: 2px solid whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+section.reaction.container {
+    align-items: flex-start;
+    height: 400px;
 }
